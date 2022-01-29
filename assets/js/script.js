@@ -10,19 +10,15 @@ var txt15El = $('#text15');
 var txt16El = $('#text16');
 var txt17El = $('#text17');
 
-var btn9El = $('#btn9');
-var btn10El = $('#btn10');
-var btn11El = $('#btn11');
-var btn12El = $('#btn12');
-var btn13El = $('#btn13');
-var btn14El = $('#btn14');
-var btn15El = $('#btn15');
-var btn16El = $('#btn16');
-var btn17El = $('#btn17');
-
 
 var h = moment().format("h");
 var ampm = moment().format("a");
+// Created a var that stores a unique number for each day. This is the key on which I can store an array with all of the information SAVED for that day.
+// When the page opens, it will compare this unique day number with the keys stored. If it finds one, it will populate the textareas.
+var uniqueDay = moment().format("MM")+moment().format("DD")+moment().format("Y");
+console.log(uniqueDay);
+
+var saveArray = [];
 
 var hNum = parseInt(h);
 if (ampm = 'pm') {
@@ -47,10 +43,15 @@ $.each(timeArr, function (i) {
 $('.btn').on('click', save);
 
 function save(event) {
-    console.log(event.target.attributes.data.value);
     var x = event.target.attributes.data.value;
-    console.log(x);
     var k = $('#text'+ x);
-    console.log(k);
-    console.log(k.val());
+    var object = {
+        time: x,
+        text: k.val(),
+    }
+    
+    
+    saveArray.push(object);
+    console.log(saveArray);
+    localStorage.setItem(uniqueDay, saveArray);
 }
