@@ -4,13 +4,14 @@ body {
   line-height: 1;
 }
 
-textarea {
+.textarea {
   background: transparent;
   border: none;
   resize: none;
   color: #000000;
   border-left: 1px solid black;
   padding: 10px;
+  margin: 0;
 }
 
 .jumbotron {
@@ -34,12 +35,14 @@ textarea {
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;
+  margin: 0;
 }
 
 .hour {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  margin: 0;
 }
 
 .past {
@@ -68,4 +71,9 @@ textarea {
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+}
+
+.textarea:focus {
+  background-color: transparent;
+  
 }

@@ -14,24 +14,11 @@ var timeArr = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 // This jQuery iterator looks at each time from 9am to 5pm (17) and compares them to the actual time to determine the color of each row.
 $.each(timeArr, function (i) {
   var rowId = "#" + timeArr[i];
-  if (timeArr[i] < h) {
+  if (timeArr[i] < hNum) {
     $(rowId).addClass('past');
-  } else if (timeArr[i] === h) {
+  } else if (timeArr[i] == hNum) {
     $(rowId).addClass('present');
-  } else if (timeArr[i] > h) {
+  } else if (timeArr[i] > hNum) {
     $(rowId).addClass('future');
   }
 });
-//     if (timeArr[i] == h) {
-
-//         $(rowId).addClass('present');
-//     } else if (timeArr[] ){
-//         $(rowId).addClass('future');
-//     }
-// })
-
-// if (ap == 'am') {
-//     console.log('HEY!');
-// }
-
-// $(rowId).addClass('future');
