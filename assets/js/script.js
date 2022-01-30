@@ -13,7 +13,7 @@ var hNum = parseInt(h);
 if (ampm = 'pm' && h != 12) {
   hNum += 12;
 }
-console.log(hNum);
+
 // Using times on the 24hr military time for convenience
 var timeArr = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
@@ -29,7 +29,9 @@ $.each(timeArr, function (i) {
   }
 });
 
+// Selecting all buttons with the class 'btn'
 $('.btn').on('click', save);
+
 
 function save(event) {
     var x = event.target.attributes.data.value;
@@ -39,25 +41,21 @@ function save(event) {
         text: k.val(),
     }
     
-    
     saveArray.push(object);
-    console.log(saveArray);
+    
     localStorage.setItem(uniqueDay, JSON.stringify(saveArray));
 }
 
 function useStorage () {
-    // var keys = Object.keys(localStorage);
 
-    if (localStorage.getItem(uniqueDay) !== undefined) {
+    if (localStorage.getItem(uniqueDay) !== null) {
         var y = localStorage.getItem(uniqueDay);
         saveArray = JSON.parse(y);
-    }
-    console.log(saveArray);
 
-    for (i=0; i<saveArray.length; i++) {
-        var x = saveArray[i].time;
-        var id = $('#text'+ x);
-        id.text(saveArray[i].text);
-
+        for (i=0; i<saveArray.length; i++) {
+            var x = saveArray[i].time;
+            var id = $('#text'+ x);
+            id.text(saveArray[i].text); 
+        }
     }
 }
