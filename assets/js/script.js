@@ -29,8 +29,9 @@ $.each(timeArr, function (i) {
   }
 });
 
-// Selecting all buttons with the class 'btn'
+// Selecting all buttons with the class 'btn' AND since there is an image that can be clicked inside the button, it gets an event listener as well.
 $('.btn').on('click', save);
+$('img').on('click', save);
 
 // Upon clicking save, each button has a data attribute that is being collected and stored for x, this allows us to know which button controls which textarea
 // Once we know what textarea we are pulling from we can grab that text and store it along with the time in an object
