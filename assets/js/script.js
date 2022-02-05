@@ -10,7 +10,7 @@ var saveArray = [];
 
 // if converted to an integer, then we can add to it and compare with inequalities
 var hNum = parseInt(h);
-if (ampm = 'pm' && h != 12) {
+if (ampm == 'pm' && h != 12) {
   hNum += 12;
 }
 
